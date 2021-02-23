@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://takenItemFromOwnerBrowse.caption"
+        focusComponent="takenItemsTable"
+        messagesPack="net.bondarik.dvdexchange.web.screens.takenitem">
+    <data readOnly="true">
+        <collection id="takenItemsDc"
+                    class="net.bondarik.dvdexchange.entity.TakenItem">
+            <view extends="_local">
+                <property name="disk" view="_minimal"/>
+                <property name="user" view="_minimal"/>
+            </view>
+            <loader id="takenItemsDl">
+                <query>
+                    <![CDATA[select ti from dvdexchange_TakenItem ti
+                             LEFT JOIN ti.disk d
+                             LEFT JOIN d.owner o
+                             WHERE o.id = :userId]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="takenItemsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="takenItemsTable"
+                dataLoader="takenItemsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="takenItemsTable"
+                    width="100%"
+                    dataContainer="takenItemsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="disk.title" caption="Title" />
+                <column id="user.login" caption="Holder"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="takenItemsTable.create"/>
+                <button id="editBtn" action="takenItemsTable.edit"/>
+                <button id="removeBtn" action="takenItemsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

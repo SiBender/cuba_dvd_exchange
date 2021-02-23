@@ -1,0 +1,1 @@
+update SEC_USER set DTYPE = 'dvdexchange_DvdUser' where DTYPE is null ;

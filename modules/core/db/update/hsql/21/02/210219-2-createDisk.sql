@@ -1,0 +1,2 @@
+alter table DVDEXCHANGE_DISK add constraint FK_DVDEXCHANGE_DISK_ON_OWNER foreign key (OWNER_ID) references SEC_USER(ID);
+create index IDX_DVDEXCHANGE_DISK_ON_OWNER on DVDEXCHANGE_DISK (OWNER_ID);

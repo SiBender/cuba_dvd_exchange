@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-dvdexchange" insertBefore="administration" caption="mainMsg://menu_config.application-dvdexchange">
+        <item screen="dvdexchange_Disk.browse" caption="mainMsg://menu_config.dvdexchange_Disk.browse"/>
+        <item screen="dvdexchange_FreeDisk.browse" caption="mainMsg://menu_config.dvdexchange_FreeDisk.browse"/>
+        <item screen="dvdexchange_TakenItem.browse" caption="mainMsg://menu_config.dvdexchange_TakenItem.browse"/>
+        <item screen="dvdexchange_TakenItemFromOwner.browse"
+              caption="mainMsg://menu_config.dvdexchange_TakenItemFromOwner.browse"/>
+    </menu>
+</menu-config>
