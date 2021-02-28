@@ -1,0 +1,25 @@
+Install JDK
+
+Install Gradle
+
+Download soursecode from repository https://github.com/SiBender/cuba_dvd_exchange to local directory
+
+To change database settings (if needed) edit file <project-dir>\modules\core\src\net\bondarik\dvdexchange\app.properties
+
+in project directory run commands:
+	gradle setupTomcat
+	gradle build
+	
+run script 
+	.\deploy\tomcat\bin\startup.bat
+	
+make shure your system don't have environment variables CATALINA_HOME, CATALINA_BASE and CLASSPATH
+
+
+now application available at http://localhost:8080/dvd/
+
+User:Password
+
+	Andy:1
+	Bob:2
+	Charley:3
