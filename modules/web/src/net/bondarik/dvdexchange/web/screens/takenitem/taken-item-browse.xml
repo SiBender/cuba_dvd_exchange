@@ -37,9 +37,7 @@
                     width="100%"
                     dataContainer="takenItemsDc">
             <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="remove" type="remove"/>
+
             </actions>
             <columns>
                 <column id="disk.title"/>
@@ -48,9 +46,6 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="takenItemsTable.create"/>
-                <button id="editBtn" action="takenItemsTable.edit"/>
-                <button id="removeBtn" action="takenItemsTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

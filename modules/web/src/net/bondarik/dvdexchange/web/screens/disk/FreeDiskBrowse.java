@@ -60,5 +60,6 @@ public class FreeDiskBrowse extends StandardLookup<Disk> {
         takenItem.setDisk(disk);
         takenItem.setUser((DvdUser)userSession.getUser());
         dataManager.commit(takenItem);
+        disksDl.load();
     }
 }

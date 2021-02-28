@@ -36,7 +36,7 @@
             </actions>
             <columns>
                 <column id="title"/>
-                <column id="owner"/>
+                <column id="owner.login"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
